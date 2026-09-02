@@ -1,0 +1,123 @@
+[
+  {
+    "po_id": "PO0001",
+    "supplier_id": "S01",
+    "supplier_nama": "Pasar Induk Kramat Jati",
+    "items": [
+      {
+        "product_id": "P02",
+        "nama": "Minyak Goreng",
+        "qty": 6,
+        "harga_satuan": 16000,
+        "subtotal": 96000
+      },
+      {
+        "product_id": "P04",
+        "nama": "Telur Ayam",
+        "qty": 4,
+        "harga_satuan": 24000,
+        "subtotal": 96000
+      }
+    ],
+    "total": 192000,
+    "status": "approved",
+    "dibuat_oleh": "agent",
+    "approved_at": "2026-07-10"
+  },
+  {
+    "po_id": "PO0002",
+    "supplier_id": "S02",
+    "supplier_nama": "Toko Sembako Pak Hadi",
+    "items": [
+      {
+        "product_id": "P01",
+        "nama": "Beras Premium",
+        "qty": 20,
+        "harga_satuan": 13500,
+        "subtotal": 270000
+      },
+      {
+        "product_id": "P05",
+        "nama": "Gula Pasir",
+        "qty": 2,
+        "harga_satuan": 14000,
+        "subtotal": 28000
+      },
+      {
+        "product_id": "P04",
+        "nama": "Telur Ayam",
+        "qty": 4,
+        "harga_satuan": 26000,
+        "subtotal": 104000
+      },
+      {
+        "product_id": "P09",
+        "nama": "Kecap Manis",
+        "qty": 6,
+        "harga_satuan": 10000,
+        "subtotal": 60000
+      }
+    ],
+    "total": 462000,
+    "status": "approved",
+    "dibuat_oleh": "agent",
+    "approved_at": "2026-07-20"
+  },
+  {
+    "po_id": "PO0003",
+    "supplier_id": "S03",
+    "supplier_nama": "Distributor Ayam Sejahtera",
+    "items": [
+      {
+        "product_id": "P03",
+        "nama": "Ayam Potong",
+        "qty": 30,
+        "harga_satuan": 28000,
+        "subtotal": 840000
+      }
+    ],
+    "total": 840000,
+    "status": "approved",
+    "dibuat_oleh": "agent",
+    "approved_at": "2026-08-01"
+  },
+  {
+    "po_id": "PO0004",
+    "supplier_id": "S01",
+    "supplier_nama": "Pasar Induk Kramat Jati",
+    "items": [
+      {
+        "product_id": "P02",
+        "nama": "Minyak Goreng",
+        "qty": 2,
+        "harga_satuan": 16000,
+        "subtotal": 32000
+      },
+      {
+        "product_id": "P03",
+        "nama": "Ayam Potong",
+        "qty": 5,
+        "harga_satuan": 30000,
+        "subtotal": 150000
+      },
+      {
+        "product_id": "P07",
+        "nama": "Bawang Putih",
+        "qty": 1,
+        "harga_satuan": 35000,
+        "subtotal": 35000
+      },
+      {
+        "product_id": "P08",
+        "nama": "Cabai Merah",
+        "qty": 2,
+        "harga_satuan": 45000,
+        "subtotal": 90000
+      }
+    ],
+    "total": 307000,
+    "status": "draft",
+    "dibuat_oleh": "agent",
+    "approved_at": null
+  }
+]
