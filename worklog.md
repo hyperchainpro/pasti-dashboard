@@ -23,3 +23,28 @@ Stage Summary:
 - Seed Data: /home/z/my-project/download/pasti_seed_data/ (5 JSON files)
 - Seed Script: /home/z/my-project/scripts/pasti_seed_data.py
 - System Prompt: /home/z/my-project/download/PASTI_Bedrock_Agent_System_Prompt.md
+
+---
+Task ID: 2
+Agent: Super Z (Main)
+Task: Build PASTI Web Dashboard + Deploy Setup
+
+Work Log:
+- Initialized GitHub repo: hyperchainpro/pasti-ai-agent (Python/Lambda code)
+- Initialized fullstack-dev environment (Next.js 16 + shadcn/ui)
+- Created Prisma schema with 6 models (Product, Sale, Supplier, PurchaseOrder, AgentLog, OwnerPreference)
+- Created 7 API routes: /api/dashboard, /api/products, /api/sales, /api/forecasts, /api/orders, /api/agent-logs, /api/suppliers
+- Created demo-data.ts: static data module reading from JSON files (no DB needed for Vercel)
+- Delegated full dashboard UI build to full-stack-developer subagent (6 tabs)
+- Fixed data shape mismatches between JSON seed data and component interfaces
+- Verified all 6 tabs with Agent Browser + VLM analysis
+- Created GitHub repo: hyperchainpro/pasti-dashboard (clean, no node_modules)
+- Created Vercel project: pasti-v2 (buildCommand: npm run build)
+- Vercel git integration requires manual setup (GitHub App connect via dashboard)
+
+Stage Summary:
+- GitHub Repo (Backend): https://github.com/hyperchainpro/pasti-ai-agent
+- GitHub Repo (Dashboard): https://github.com/hyperchainpro/pasti-dashboard
+- Vercel Project: pasti-v2 (needs manual git connect)
+- Dashboard verified locally: 6 tabs all rendering correctly
+- Data: 10 products, 587 sales, 3 suppliers, 4 orders, 1 agent log

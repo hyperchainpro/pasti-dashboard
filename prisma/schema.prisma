@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  productId   String  @id @default(cuid())
+  kode        String  @unique
+  nama        String
+  unit        String
+  stokSaIni   Float
+  stokMin     Float
+  safetyStock Float
+  hargaJual   Int
+  sales       Sale[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Sale {
+  id        String   @id @default(cuid())
+  saleId    String   @unique
+  productId String
+  tanggal   String
+  jumlah    Float
+  hargaSatuan Int
+  total     Int
+  product   Product  @relation(fields: [productId], references: [productId])
+  createdAt DateTime @default(now())
+}
+
+model Supplier {
+  id         String @id @default(cuid())
+  supplierId String @unique
+  nama       String
+  kontak     String
+  produk     String
+  hargaMin   Int
+  hargaMax   Int
+  leadTime   String
+  rating     Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model PurchaseOrder {
+  id          String   @id @default(cuid())
+  poId        String   @unique
+  items       String
+  supplierId  String
+  totalHarga  Int
+  status      String   @default("draft")
+  createdAt   String
+  updatedAt   DateTime @default(now())
+}
+
+model AgentLog {
+  id        String @id @default(cuid())
+  traceId   String @unique
+  timestamp String
+  step      String
+  detail    String
+  createdAt DateTime @default(now())
+}
+
+model OwnerPreference {
+  id       String @id @default(cuid())
+  prefKey  String @unique
+  prefValue String
+  updatedAt DateTime @updatedAt
+}

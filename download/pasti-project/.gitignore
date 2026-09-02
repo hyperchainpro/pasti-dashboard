@@ -2,19 +2,17 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 *.egg-info/
 dist/
 build/
-.venv/
-venv/
-.env
+.eggs/
 *.egg
 
-# AWS
-.aws/
-*.sam/
-samconfig.toml
-packaged.yaml
+# Virtual environments
+.venv/
+venv/
+env/
 
 # IDE
 .vscode/
@@ -23,25 +21,35 @@ packaged.yaml
 *.swo
 *~
 
+# SAM / AWS
+.aws-sam/
+.sam/
+*.zip
+packaged.yaml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Environment variables (JANGAN COMMIT SECRETS!)
+.env
+.env.local
+.env.*.local
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Data output (regenerable)
-scripts/output/*.json
+# Node (if any)
+node_modules/
 
-# Credentials (JANGAN PERNAH COMMIT)
-*.pem
-*.key
-.env.local
-.env.production
-credentials.json
+# Logs
+*.log
 
 # Streamlit
 .streamlit/secrets.toml
 
-# PDFs (generated)
-*.pdf
-
-# Node (jika ada)
-node_modules/
+# Data (seed data bisa di-regenerate)
+# pasti_seed_data/ -- uncomment jika tidak ingin track data JSON

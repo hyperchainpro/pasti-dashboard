@@ -1,0 +1,14 @@
+.zscripts/
+db/
+download/
+*.pdf
+*.png
+*.jpg
+tools/
+tests/
+examples/
+mini-services/
+worklog.md
+*.log
+Caddyfile
+scripts/
