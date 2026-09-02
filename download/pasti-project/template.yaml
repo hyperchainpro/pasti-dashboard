@@ -1,0 +1,281 @@
+# PASTI - SAM Template
+# Deploy: sam build && sam deploy --guided
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: PASTI - Proactive Agentic Supply-chain Tracking & Inventory
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 120
+    Environment:
+      Variables:
+        AWS_REGION: !Ref AWS::Region
+        PRODUCTS_TABLE: !Ref ProductsTable
+        SALES_TABLE: !Ref SalesTable
+        SUPPLIERS_TABLE: !Ref SuppliersTable
+        ORDERS_TABLE: !Ref OrdersTable
+        AGENT_LOGS_TABLE: !Ref AgentLogsTable
+        OWNER_PREFS_TABLE: !Ref OwnerPrefsTable
+        S3_BUCKET_NAME: !Ref POBucket
+        TELEGRAM_BOT_TOKEN: !Ref TelegramBotToken
+        TELEGRAM_CHAT_ID: !Ref TelegramChatId
+    Handler: index.handler
+
+Parameters:
+  TelegramBotToken:
+    Type: String
+    Description: Telegram Bot Token dari @BotFather
+  TelegramChatId:
+    Type: String
+    Description: Chat ID owner di Telegram
+  BudgetEmail:
+    Type: String
+    Default: ""
+    Description: Email untuk budget alarm (opsional)
+
+Resources:
+  # ── DynamoDB Tables ──
+  ProductsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-products
+      AttributeDefinitions:
+        - AttributeName: product_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: product_id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  SalesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-sales
+      AttributeDefinitions:
+        - AttributeName: sale_id
+          AttributeType: S
+        - AttributeName: product_id
+          AttributeType: S
+        - AttributeName: tanggal
+          AttributeType: S
+      KeySchema:
+        - AttributeName: sale_id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: product-date-index
+          KeySchema:
+            - AttributeName: product_id
+              KeyType: HASH
+            - AttributeName: tanggal
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      BillingMode: PAY_PER_REQUEST
+
+  SuppliersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-suppliers
+      AttributeDefinitions:
+        - AttributeName: supplier_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: supplier_id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  OrdersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-orders
+      AttributeDefinitions:
+        - AttributeName: po_id
+          AttributeType: S
+        - AttributeName: status
+          AttributeType: S
+        - AttributeName: created_at
+          AttributeType: S
+      KeySchema:
+        - AttributeName: po_id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: status-index
+          KeySchema:
+            - AttributeName: status
+              KeyType: HASH
+            - AttributeName: created_at
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      BillingMode: PAY_PER_REQUEST
+
+  AgentLogsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-agent-logs
+      AttributeDefinitions:
+        - AttributeName: trace_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: trace_id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  OwnerPrefsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: pasti-owner-preferences
+      AttributeDefinitions:
+        - AttributeName: pref_key
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pref_key
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  # ── S3 Bucket ──
+  POBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: pasti-po-documents
+
+  AgentSchemasBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: pasti-agent-schemas
+
+  # ── Lambda Functions ──
+  InventoryToolsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: PASTI-InventoryTools
+      CodeUri: lambda/inventory_tools/
+      Description: PASTI: stok, penjualan, forecast
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: pasti-products
+        - DynamoDBCrudPolicy:
+            TableName: pasti-sales
+        - DynamoDBCrudPolicy:
+            TableName: pasti-owner-preferences
+        - S3ReadPolicy:
+            BucketName: pasti-agent-schemas
+      Events:
+        GetInventory:
+          Type: Api
+          Properties:
+            Path: /inventory
+            Method: GET
+        GetSales:
+          Type: Api
+          Properties:
+            Path: /sales
+            Method: GET
+        GetForecast:
+          Type: Api
+          Properties:
+            Path: /forecast
+            Method: GET
+
+  ProcurementToolsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: PASTI-ProcurementTools
+      CodeUri: lambda/procurement_tools/
+      Description: PASTI: supplier, PO, notifikasi Telegram
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: pasti-suppliers
+        - DynamoDBCrudPolicy:
+            TableName: pasti-products
+        - DynamoDBCrudPolicy:
+            TableName: pasti-orders
+        - S3CrudPolicy:
+            BucketName: pasti-po-documents
+      Events:
+        GetSuppliers:
+          Type: Api
+          Properties:
+            Path: /suppliers
+            Method: GET
+        CreateOrder:
+          Type: Api
+          Properties:
+            Path: /orders
+            Method: POST
+        SendNotify:
+          Type: Api
+          Properties:
+            Path: /notify
+            Method: POST
+
+  TelegramHandlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: PASTI-TelegramHandler
+      CodeUri: lambda/telegram_handler/
+      Description: PASTI: Telegram webhook callback
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: pasti-orders
+      Events:
+        TelegramWebhook:
+          Type: Api
+          Properties:
+            Path: /telegram/webhook
+            Method: POST
+
+  # ── EventBridge Scheduler ──
+  DailyAgentSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      Name: pasti-daily-agent-run
+      FlexibleTimeWindow:
+        Mode: OFF
+      ScheduleExpression: "cron(0 13 * * ? *)"
+      Target:
+        Arn: !GetAtt InventoryToolsFunction.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+
+  SchedulerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: PASTI-Scheduler-Role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: scheduler.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: Invoke-Lambda
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: lambda:InvokeFunction
+                Resource: !GetAtt InventoryToolsFunction.Arn
+
+  # ── Budget Alarm (jika email diberikan) ──
+  # Note: AWS Budgets tidak support CloudFormation langsung.
+  # Gunakan script: python scripts/create_budget_alarm.py --email you@email.com
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+  InventoryToolsArn:
+    Description: ARN Inventory Tools Lambda
+    Value: !GetAtt InventoryToolsFunction.Arn
+  ProcurementToolsArn:
+    Description: ARN Procurement Tools Lambda
+    Value: !GetAtt ProcurementToolsFunction.Arn
+  TelegramHandlerArn:
+    Description: ARN Telegram Handler Lambda
+    Value: !GetAtt TelegramHandlerFunction.Arn
+  POBucketName:
+    Description: S3 bucket untuk PDF PO
+    Value: !Ref POBucket

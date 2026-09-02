@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+*.egg
+
+# AWS
+.aws/
+*.sam/
+samconfig.toml
+packaged.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data output (regenerable)
+scripts/output/*.json
+
+# Credentials (JANGAN PERNAH COMMIT)
+*.pem
+*.key
+.env.local
+.env.production
+credentials.json
+
+# Streamlit
+.streamlit/secrets.toml
+
+# PDFs (generated)
+*.pdf
+
+# Node (jika ada)
+node_modules/
