@@ -1,0 +1,3524 @@
+[
+  {
+    "sale_id": "SL00001",
+    "product_id": "P01",
+    "qty": 3.1,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00002",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00003",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00004",
+    "product_id": "P04",
+    "qty": 1.9,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00005",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00006",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00007",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00008",
+    "product_id": "P08",
+    "qty": 1.0,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00009",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00010",
+    "product_id": "P10",
+    "qty": 0.3,
+    "tanggal": "2026-07-01"
+  },
+  {
+    "sale_id": "SL00011",
+    "product_id": "P01",
+    "qty": 3.4,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00012",
+    "product_id": "P02",
+    "qty": 1.5,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00013",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00014",
+    "product_id": "P04",
+    "qty": 2.4,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00015",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00016",
+    "product_id": "P06",
+    "qty": 1.2,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00017",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00018",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00019",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00020",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-07-02"
+  },
+  {
+    "sale_id": "SL00021",
+    "product_id": "P01",
+    "qty": 4.3,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00022",
+    "product_id": "P02",
+    "qty": 2.5,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00023",
+    "product_id": "P03",
+    "qty": 12,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00024",
+    "product_id": "P04",
+    "qty": 3.7,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00025",
+    "product_id": "P05",
+    "qty": 1.3,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00026",
+    "product_id": "P06",
+    "qty": 1.9,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00027",
+    "product_id": "P07",
+    "qty": 1.0,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00028",
+    "product_id": "P08",
+    "qty": 1.9,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00029",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00030",
+    "product_id": "P10",
+    "qty": 2.1,
+    "tanggal": "2026-07-03"
+  },
+  {
+    "sale_id": "SL00031",
+    "product_id": "P01",
+    "qty": 5.3,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00032",
+    "product_id": "P02",
+    "qty": 2.6,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00033",
+    "product_id": "P03",
+    "qty": 12,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00034",
+    "product_id": "P04",
+    "qty": 0.5,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00035",
+    "product_id": "P05",
+    "qty": 1.3,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00036",
+    "product_id": "P06",
+    "qty": 2.3,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00037",
+    "product_id": "P07",
+    "qty": 1.1,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00038",
+    "product_id": "P08",
+    "qty": 1.3,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00039",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00040",
+    "product_id": "P10",
+    "qty": 1.6,
+    "tanggal": "2026-07-04"
+  },
+  {
+    "sale_id": "SL00041",
+    "product_id": "P01",
+    "qty": 3.9,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00042",
+    "product_id": "P02",
+    "qty": 2.5,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00043",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00044",
+    "product_id": "P04",
+    "qty": 3.7,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00045",
+    "product_id": "P05",
+    "qty": 1.5,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00046",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00047",
+    "product_id": "P07",
+    "qty": 1.1,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00048",
+    "product_id": "P08",
+    "qty": 1.2,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00049",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00050",
+    "product_id": "P10",
+    "qty": 1.7,
+    "tanggal": "2026-07-05"
+  },
+  {
+    "sale_id": "SL00051",
+    "product_id": "P01",
+    "qty": 3.1,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00052",
+    "product_id": "P02",
+    "qty": 1.5,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00053",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00054",
+    "product_id": "P04",
+    "qty": 2.4,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00055",
+    "product_id": "P05",
+    "qty": 0.5,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00056",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00057",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00058",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00059",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-06"
+  },
+  {
+    "sale_id": "SL00060",
+    "product_id": "P01",
+    "qty": 2.5,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00061",
+    "product_id": "P02",
+    "qty": 1.2,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00062",
+    "product_id": "P03",
+    "qty": 1,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00063",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00064",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00065",
+    "product_id": "P06",
+    "qty": 1.0,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00066",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00067",
+    "product_id": "P08",
+    "qty": 0.6,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00068",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00069",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-07"
+  },
+  {
+    "sale_id": "SL00070",
+    "product_id": "P01",
+    "qty": 2.0,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00071",
+    "product_id": "P02",
+    "qty": 1.5,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00072",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00073",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00074",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00075",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00076",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00077",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00078",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-08"
+  },
+  {
+    "sale_id": "SL00079",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00080",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00081",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00082",
+    "product_id": "P04",
+    "qty": 1.9,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00083",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00084",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00085",
+    "product_id": "P07",
+    "qty": 0.4,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00086",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00087",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00088",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-09"
+  },
+  {
+    "sale_id": "SL00089",
+    "product_id": "P01",
+    "qty": 3.4,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00090",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00091",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00092",
+    "product_id": "P04",
+    "qty": 3.0,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00093",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00094",
+    "product_id": "P06",
+    "qty": 1.9,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00095",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00096",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00097",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00098",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-07-10"
+  },
+  {
+    "sale_id": "SL00099",
+    "product_id": "P01",
+    "qty": 4.7,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00100",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00101",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00102",
+    "product_id": "P04",
+    "qty": 2.8,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00103",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00104",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00105",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00106",
+    "product_id": "P08",
+    "qty": 0.6,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00107",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00108",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-07-11"
+  },
+  {
+    "sale_id": "SL00109",
+    "product_id": "P01",
+    "qty": 4.2,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00110",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00111",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00112",
+    "product_id": "P04",
+    "qty": 3.0,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00113",
+    "product_id": "P05",
+    "qty": 1.4,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00114",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00115",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00116",
+    "product_id": "P08",
+    "qty": 0.5,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00117",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00118",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-07-12"
+  },
+  {
+    "sale_id": "SL00119",
+    "product_id": "P01",
+    "qty": 2.1,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00120",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00121",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00122",
+    "product_id": "P04",
+    "qty": 2.5,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00123",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00124",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00125",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00126",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00127",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00128",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-07-13"
+  },
+  {
+    "sale_id": "SL00129",
+    "product_id": "P01",
+    "qty": 3.1,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00130",
+    "product_id": "P02",
+    "qty": 1.2,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00131",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00132",
+    "product_id": "P04",
+    "qty": 1.6,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00133",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00134",
+    "product_id": "P06",
+    "qty": 1.2,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00135",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00136",
+    "product_id": "P08",
+    "qty": 0.3,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00137",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00138",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-14"
+  },
+  {
+    "sale_id": "SL00139",
+    "product_id": "P01",
+    "qty": 2.4,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00140",
+    "product_id": "P02",
+    "qty": 1.4,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00141",
+    "product_id": "P03",
+    "qty": 4,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00142",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00143",
+    "product_id": "P05",
+    "qty": 0.1,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00144",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00145",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00146",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00147",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-07-15"
+  },
+  {
+    "sale_id": "SL00148",
+    "product_id": "P01",
+    "qty": 2.9,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00149",
+    "product_id": "P02",
+    "qty": 1.3,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00150",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00151",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00152",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00153",
+    "product_id": "P06",
+    "qty": 0.9,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00154",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00155",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00156",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-16"
+  },
+  {
+    "sale_id": "SL00157",
+    "product_id": "P01",
+    "qty": 4.4,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00158",
+    "product_id": "P02",
+    "qty": 1.5,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00159",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00160",
+    "product_id": "P04",
+    "qty": 2.9,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00161",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00162",
+    "product_id": "P06",
+    "qty": 1.2,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00163",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00164",
+    "product_id": "P08",
+    "qty": 0.5,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00165",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00166",
+    "product_id": "P10",
+    "qty": 1.8,
+    "tanggal": "2026-07-17"
+  },
+  {
+    "sale_id": "SL00167",
+    "product_id": "P01",
+    "qty": 0.7,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00168",
+    "product_id": "P02",
+    "qty": 1.9,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00169",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00170",
+    "product_id": "P04",
+    "qty": 3.5,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00171",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00172",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00173",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00174",
+    "product_id": "P08",
+    "qty": 0.5,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00175",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00176",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-07-18"
+  },
+  {
+    "sale_id": "SL00177",
+    "product_id": "P01",
+    "qty": 3.4,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00178",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00179",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00180",
+    "product_id": "P04",
+    "qty": 3.2,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00181",
+    "product_id": "P05",
+    "qty": 1.5,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00182",
+    "product_id": "P06",
+    "qty": 1.7,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00183",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00184",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00185",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00186",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-19"
+  },
+  {
+    "sale_id": "SL00187",
+    "product_id": "P01",
+    "qty": 2.4,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00188",
+    "product_id": "P02",
+    "qty": 1.3,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00189",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00190",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00191",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00192",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00193",
+    "product_id": "P07",
+    "qty": 0.1,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00194",
+    "product_id": "P08",
+    "qty": 0.5,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00195",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-20"
+  },
+  {
+    "sale_id": "SL00196",
+    "product_id": "P01",
+    "qty": 2.3,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00197",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00198",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00199",
+    "product_id": "P04",
+    "qty": 1.8,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00200",
+    "product_id": "P05",
+    "qty": 0.7,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00201",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00202",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00203",
+    "product_id": "P08",
+    "qty": 0.1,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00204",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00205",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-21"
+  },
+  {
+    "sale_id": "SL00206",
+    "product_id": "P01",
+    "qty": 2.0,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00207",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00208",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00209",
+    "product_id": "P04",
+    "qty": 0.4,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00210",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00211",
+    "product_id": "P06",
+    "qty": 0.9,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00212",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00213",
+    "product_id": "P08",
+    "qty": 1.1,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00214",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00215",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-07-22"
+  },
+  {
+    "sale_id": "SL00216",
+    "product_id": "P01",
+    "qty": 1.9,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00217",
+    "product_id": "P02",
+    "qty": 0.9,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00218",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00219",
+    "product_id": "P04",
+    "qty": 1.7,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00220",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00221",
+    "product_id": "P06",
+    "qty": 1.0,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00222",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00223",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00224",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00225",
+    "product_id": "P10",
+    "qty": 0.8,
+    "tanggal": "2026-07-23"
+  },
+  {
+    "sale_id": "SL00226",
+    "product_id": "P01",
+    "qty": 3.9,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00227",
+    "product_id": "P02",
+    "qty": 2.2,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00228",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00229",
+    "product_id": "P04",
+    "qty": 2.7,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00230",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00231",
+    "product_id": "P06",
+    "qty": 1.6,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00232",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00233",
+    "product_id": "P08",
+    "qty": 1.2,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00234",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00235",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-24"
+  },
+  {
+    "sale_id": "SL00236",
+    "product_id": "P01",
+    "qty": 4.3,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00237",
+    "product_id": "P02",
+    "qty": 2.7,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00238",
+    "product_id": "P03",
+    "qty": 13,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00239",
+    "product_id": "P04",
+    "qty": 2.5,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00240",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00241",
+    "product_id": "P06",
+    "qty": 2.0,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00242",
+    "product_id": "P07",
+    "qty": 1.0,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00243",
+    "product_id": "P08",
+    "qty": 1.4,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00244",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00245",
+    "product_id": "P10",
+    "qty": 1.8,
+    "tanggal": "2026-07-25"
+  },
+  {
+    "sale_id": "SL00246",
+    "product_id": "P01",
+    "qty": 4.3,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00247",
+    "product_id": "P02",
+    "qty": 2.6,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00248",
+    "product_id": "P03",
+    "qty": 13,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00249",
+    "product_id": "P04",
+    "qty": 3.6,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00250",
+    "product_id": "P05",
+    "qty": 1.6,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00251",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00252",
+    "product_id": "P07",
+    "qty": 1.1,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00253",
+    "product_id": "P08",
+    "qty": 1.2,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00254",
+    "product_id": "P10",
+    "qty": 1.9,
+    "tanggal": "2026-07-26"
+  },
+  {
+    "sale_id": "SL00255",
+    "product_id": "P01",
+    "qty": 3.6,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00256",
+    "product_id": "P02",
+    "qty": 1.9,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00257",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00258",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00259",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00260",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00261",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00262",
+    "product_id": "P08",
+    "qty": 1.0,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00263",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00264",
+    "product_id": "P10",
+    "qty": 1.5,
+    "tanggal": "2026-07-27"
+  },
+  {
+    "sale_id": "SL00265",
+    "product_id": "P01",
+    "qty": 3.6,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00266",
+    "product_id": "P02",
+    "qty": 0.2,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00267",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00268",
+    "product_id": "P04",
+    "qty": 3.0,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00269",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00270",
+    "product_id": "P06",
+    "qty": 1.4,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00271",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00272",
+    "product_id": "P08",
+    "qty": 1.2,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00273",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00274",
+    "product_id": "P10",
+    "qty": 1.6,
+    "tanggal": "2026-07-28"
+  },
+  {
+    "sale_id": "SL00275",
+    "product_id": "P01",
+    "qty": 2.7,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00276",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00277",
+    "product_id": "P03",
+    "qty": 9,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00278",
+    "product_id": "P04",
+    "qty": 1.9,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00279",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00280",
+    "product_id": "P06",
+    "qty": 1.2,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00281",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00282",
+    "product_id": "P08",
+    "qty": 0.6,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00283",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00284",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-07-29"
+  },
+  {
+    "sale_id": "SL00285",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00286",
+    "product_id": "P02",
+    "qty": 2.4,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00287",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00288",
+    "product_id": "P04",
+    "qty": 2.3,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00289",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00290",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00291",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00292",
+    "product_id": "P08",
+    "qty": 1.3,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00293",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-07-30"
+  },
+  {
+    "sale_id": "SL00294",
+    "product_id": "P01",
+    "qty": 5.3,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00295",
+    "product_id": "P02",
+    "qty": 2.9,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00296",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00297",
+    "product_id": "P04",
+    "qty": 2.8,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00298",
+    "product_id": "P05",
+    "qty": 1.5,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00299",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00300",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00301",
+    "product_id": "P08",
+    "qty": 1.3,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00302",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00303",
+    "product_id": "P10",
+    "qty": 1.5,
+    "tanggal": "2026-07-31"
+  },
+  {
+    "sale_id": "SL00304",
+    "product_id": "P01",
+    "qty": 4.4,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00305",
+    "product_id": "P02",
+    "qty": 2.8,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00306",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00307",
+    "product_id": "P04",
+    "qty": 3.3,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00308",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00309",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00310",
+    "product_id": "P07",
+    "qty": 1.0,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00311",
+    "product_id": "P08",
+    "qty": 1.5,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00312",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00313",
+    "product_id": "P10",
+    "qty": 1.8,
+    "tanggal": "2026-08-01"
+  },
+  {
+    "sale_id": "SL00314",
+    "product_id": "P01",
+    "qty": 5.2,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00315",
+    "product_id": "P02",
+    "qty": 2.5,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00316",
+    "product_id": "P03",
+    "qty": 12,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00317",
+    "product_id": "P04",
+    "qty": 3.1,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00318",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00319",
+    "product_id": "P06",
+    "qty": 2.2,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00320",
+    "product_id": "P07",
+    "qty": 1.2,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00321",
+    "product_id": "P08",
+    "qty": 1.3,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00322",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00323",
+    "product_id": "P10",
+    "qty": 1.9,
+    "tanggal": "2026-08-02"
+  },
+  {
+    "sale_id": "SL00324",
+    "product_id": "P01",
+    "qty": 2.8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00325",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00326",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00327",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00328",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00329",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00330",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00331",
+    "product_id": "P08",
+    "qty": 1.0,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00332",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00333",
+    "product_id": "P10",
+    "qty": 0.8,
+    "tanggal": "2026-08-03"
+  },
+  {
+    "sale_id": "SL00334",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00335",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00336",
+    "product_id": "P03",
+    "qty": 9,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00337",
+    "product_id": "P04",
+    "qty": 2.5,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00338",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00339",
+    "product_id": "P06",
+    "qty": 1.9,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00340",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00341",
+    "product_id": "P08",
+    "qty": 0.7,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00342",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00343",
+    "product_id": "P10",
+    "qty": 0.9,
+    "tanggal": "2026-08-04"
+  },
+  {
+    "sale_id": "SL00344",
+    "product_id": "P01",
+    "qty": 2.5,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00345",
+    "product_id": "P02",
+    "qty": 1.4,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00346",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00347",
+    "product_id": "P04",
+    "qty": 2.8,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00348",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00349",
+    "product_id": "P06",
+    "qty": 1.6,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00350",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00351",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00352",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00353",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-05"
+  },
+  {
+    "sale_id": "SL00354",
+    "product_id": "P01",
+    "qty": 3.3,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00355",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00356",
+    "product_id": "P03",
+    "qty": 9,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00357",
+    "product_id": "P04",
+    "qty": 1.6,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00358",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00359",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00360",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00361",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00362",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-08-06"
+  },
+  {
+    "sale_id": "SL00363",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00364",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00365",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00366",
+    "product_id": "P04",
+    "qty": 3.8,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00367",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00368",
+    "product_id": "P06",
+    "qty": 1.7,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00369",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00370",
+    "product_id": "P08",
+    "qty": 1.2,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00371",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00372",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-07"
+  },
+  {
+    "sale_id": "SL00373",
+    "product_id": "P01",
+    "qty": 3.5,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00374",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00375",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00376",
+    "product_id": "P04",
+    "qty": 2.5,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00377",
+    "product_id": "P05",
+    "qty": 1.4,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00378",
+    "product_id": "P06",
+    "qty": 2.1,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00379",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00380",
+    "product_id": "P08",
+    "qty": 1.3,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00381",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00382",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-08-08"
+  },
+  {
+    "sale_id": "SL00383",
+    "product_id": "P01",
+    "qty": 3.8,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00384",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00385",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00386",
+    "product_id": "P04",
+    "qty": 3.6,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00387",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00388",
+    "product_id": "P06",
+    "qty": 1.6,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00389",
+    "product_id": "P07",
+    "qty": 1.0,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00390",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00391",
+    "product_id": "P10",
+    "qty": 1.6,
+    "tanggal": "2026-08-09"
+  },
+  {
+    "sale_id": "SL00392",
+    "product_id": "P01",
+    "qty": 2.4,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00393",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00394",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00395",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00396",
+    "product_id": "P05",
+    "qty": 0.7,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00397",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00398",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00399",
+    "product_id": "P08",
+    "qty": 0.5,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00400",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00401",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-08-10"
+  },
+  {
+    "sale_id": "SL00402",
+    "product_id": "P01",
+    "qty": 2.6,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00403",
+    "product_id": "P02",
+    "qty": 1.3,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00404",
+    "product_id": "P03",
+    "qty": 1,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00405",
+    "product_id": "P04",
+    "qty": 2.0,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00406",
+    "product_id": "P05",
+    "qty": 0.6,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00407",
+    "product_id": "P06",
+    "qty": 1.0,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00408",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00409",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00410",
+    "product_id": "P10",
+    "qty": 0.9,
+    "tanggal": "2026-08-11"
+  },
+  {
+    "sale_id": "SL00411",
+    "product_id": "P01",
+    "qty": 2.2,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00412",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00413",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00414",
+    "product_id": "P04",
+    "qty": 1.5,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00415",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00416",
+    "product_id": "P06",
+    "qty": 0.2,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00417",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00418",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00419",
+    "product_id": "P10",
+    "qty": 0.8,
+    "tanggal": "2026-08-12"
+  },
+  {
+    "sale_id": "SL00420",
+    "product_id": "P01",
+    "qty": 2.8,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00421",
+    "product_id": "P02",
+    "qty": 1.3,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00422",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00423",
+    "product_id": "P04",
+    "qty": 2.2,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00424",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00425",
+    "product_id": "P06",
+    "qty": 1.4,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00426",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00427",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00428",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00429",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-13"
+  },
+  {
+    "sale_id": "SL00430",
+    "product_id": "P01",
+    "qty": 0.7,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00431",
+    "product_id": "P02",
+    "qty": 2.3,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00432",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00433",
+    "product_id": "P04",
+    "qty": 2.4,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00434",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00435",
+    "product_id": "P06",
+    "qty": 2.0,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00436",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00437",
+    "product_id": "P08",
+    "qty": 0.7,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00438",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00439",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-08-14"
+  },
+  {
+    "sale_id": "SL00440",
+    "product_id": "P01",
+    "qty": 3.9,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00441",
+    "product_id": "P02",
+    "qty": 2.1,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00442",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00443",
+    "product_id": "P04",
+    "qty": 3.3,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00444",
+    "product_id": "P05",
+    "qty": 1.3,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00445",
+    "product_id": "P06",
+    "qty": 1.8,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00446",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00447",
+    "product_id": "P08",
+    "qty": 0.7,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00448",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00449",
+    "product_id": "P10",
+    "qty": 1.2,
+    "tanggal": "2026-08-15"
+  },
+  {
+    "sale_id": "SL00450",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00451",
+    "product_id": "P02",
+    "qty": 1.6,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00452",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00453",
+    "product_id": "P04",
+    "qty": 2.5,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00454",
+    "product_id": "P05",
+    "qty": 1.1,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00455",
+    "product_id": "P06",
+    "qty": 1.6,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00456",
+    "product_id": "P07",
+    "qty": 0.9,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00457",
+    "product_id": "P08",
+    "qty": 0.6,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00458",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-16"
+  },
+  {
+    "sale_id": "SL00459",
+    "product_id": "P01",
+    "qty": 2.7,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00460",
+    "product_id": "P02",
+    "qty": 1.3,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00461",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00462",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00463",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00464",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00465",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00466",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00467",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00468",
+    "product_id": "P10",
+    "qty": 1.0,
+    "tanggal": "2026-08-17"
+  },
+  {
+    "sale_id": "SL00469",
+    "product_id": "P01",
+    "qty": 2.3,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00470",
+    "product_id": "P02",
+    "qty": 1.2,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00471",
+    "product_id": "P03",
+    "qty": 1,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00472",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00473",
+    "product_id": "P05",
+    "qty": 0.6,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00474",
+    "product_id": "P06",
+    "qty": 1.0,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00475",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00476",
+    "product_id": "P08",
+    "qty": 0.3,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00477",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00478",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-18"
+  },
+  {
+    "sale_id": "SL00479",
+    "product_id": "P01",
+    "qty": 3.1,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00480",
+    "product_id": "P02",
+    "qty": 1.8,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00481",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00482",
+    "product_id": "P04",
+    "qty": 1.6,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00483",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00484",
+    "product_id": "P06",
+    "qty": 1.1,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00485",
+    "product_id": "P07",
+    "qty": 0.5,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00486",
+    "product_id": "P08",
+    "qty": 0.1,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00487",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-08-19"
+  },
+  {
+    "sale_id": "SL00488",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00489",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00490",
+    "product_id": "P03",
+    "qty": 5,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00491",
+    "product_id": "P04",
+    "qty": 2.2,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00492",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00493",
+    "product_id": "P06",
+    "qty": 1.0,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00494",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00495",
+    "product_id": "P08",
+    "qty": 0.4,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00496",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00497",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-08-20"
+  },
+  {
+    "sale_id": "SL00498",
+    "product_id": "P01",
+    "qty": 3.6,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00499",
+    "product_id": "P02",
+    "qty": 2.3,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00500",
+    "product_id": "P03",
+    "qty": 2,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00501",
+    "product_id": "P04",
+    "qty": 3.5,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00502",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00503",
+    "product_id": "P06",
+    "qty": 1.8,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00504",
+    "product_id": "P07",
+    "qty": 0.2,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00505",
+    "product_id": "P08",
+    "qty": 1.1,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00506",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00507",
+    "product_id": "P10",
+    "qty": 1.6,
+    "tanggal": "2026-08-21"
+  },
+  {
+    "sale_id": "SL00508",
+    "product_id": "P01",
+    "qty": 3.5,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00509",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00510",
+    "product_id": "P03",
+    "qty": 9,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00511",
+    "product_id": "P04",
+    "qty": 2.3,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00512",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00513",
+    "product_id": "P06",
+    "qty": 1.7,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00514",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00515",
+    "product_id": "P08",
+    "qty": 1.1,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00516",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00517",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-08-22"
+  },
+  {
+    "sale_id": "SL00518",
+    "product_id": "P01",
+    "qty": 3.7,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00519",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00520",
+    "product_id": "P03",
+    "qty": 9,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00521",
+    "product_id": "P04",
+    "qty": 2.9,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00522",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00523",
+    "product_id": "P06",
+    "qty": 2.4,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00524",
+    "product_id": "P07",
+    "qty": 0.8,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00525",
+    "product_id": "P08",
+    "qty": 1.1,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00526",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00527",
+    "product_id": "P10",
+    "qty": 1.1,
+    "tanggal": "2026-08-23"
+  },
+  {
+    "sale_id": "SL00528",
+    "product_id": "P01",
+    "qty": 2.2,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00529",
+    "product_id": "P02",
+    "qty": 1.5,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00530",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00531",
+    "product_id": "P04",
+    "qty": 2.1,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00532",
+    "product_id": "P05",
+    "qty": 0.8,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00533",
+    "product_id": "P06",
+    "qty": 1.3,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00534",
+    "product_id": "P07",
+    "qty": 0.6,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00535",
+    "product_id": "P08",
+    "qty": 0.8,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00536",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00537",
+    "product_id": "P10",
+    "qty": 0.8,
+    "tanggal": "2026-08-24"
+  },
+  {
+    "sale_id": "SL00538",
+    "product_id": "P01",
+    "qty": 3.0,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00539",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00540",
+    "product_id": "P03",
+    "qty": 8,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00541",
+    "product_id": "P04",
+    "qty": 1.7,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00542",
+    "product_id": "P05",
+    "qty": 0.9,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00543",
+    "product_id": "P06",
+    "qty": 1.4,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00544",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00545",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00546",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00547",
+    "product_id": "P10",
+    "qty": 1.5,
+    "tanggal": "2026-08-25"
+  },
+  {
+    "sale_id": "SL00548",
+    "product_id": "P01",
+    "qty": 3.8,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00549",
+    "product_id": "P02",
+    "qty": 1.2,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00550",
+    "product_id": "P03",
+    "qty": 7,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00551",
+    "product_id": "P04",
+    "qty": 2.4,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00552",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00553",
+    "product_id": "P06",
+    "qty": 1.6,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00554",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00555",
+    "product_id": "P08",
+    "qty": 1.0,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00556",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00557",
+    "product_id": "P10",
+    "qty": 0.3,
+    "tanggal": "2026-08-26"
+  },
+  {
+    "sale_id": "SL00558",
+    "product_id": "P01",
+    "qty": 3.1,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00559",
+    "product_id": "P02",
+    "qty": 1.7,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00560",
+    "product_id": "P03",
+    "qty": 6,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00561",
+    "product_id": "P04",
+    "qty": 2.9,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00562",
+    "product_id": "P05",
+    "qty": 1.0,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00563",
+    "product_id": "P06",
+    "qty": 1.5,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00564",
+    "product_id": "P07",
+    "qty": 0.7,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00565",
+    "product_id": "P08",
+    "qty": 0.9,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00566",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00567",
+    "product_id": "P10",
+    "qty": 1.3,
+    "tanggal": "2026-08-27"
+  },
+  {
+    "sale_id": "SL00568",
+    "product_id": "P01",
+    "qty": 3.9,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00569",
+    "product_id": "P02",
+    "qty": 2.8,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00570",
+    "product_id": "P03",
+    "qty": 10,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00571",
+    "product_id": "P04",
+    "qty": 3.4,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00572",
+    "product_id": "P05",
+    "qty": 1.6,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00573",
+    "product_id": "P06",
+    "qty": 2.1,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00574",
+    "product_id": "P07",
+    "qty": 0.2,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00575",
+    "product_id": "P08",
+    "qty": 1.6,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00576",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00577",
+    "product_id": "P10",
+    "qty": 2.0,
+    "tanggal": "2026-08-28"
+  },
+  {
+    "sale_id": "SL00578",
+    "product_id": "P01",
+    "qty": 5.0,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00579",
+    "product_id": "P02",
+    "qty": 2.0,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00580",
+    "product_id": "P03",
+    "qty": 11,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00581",
+    "product_id": "P04",
+    "qty": 3.5,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00582",
+    "product_id": "P05",
+    "qty": 1.2,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00583",
+    "product_id": "P06",
+    "qty": 1.9,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00584",
+    "product_id": "P07",
+    "qty": 1.1,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00585",
+    "product_id": "P08",
+    "qty": 1.4,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00586",
+    "product_id": "P09",
+    "qty": 1,
+    "tanggal": "2026-08-29"
+  },
+  {
+    "sale_id": "SL00587",
+    "product_id": "P10",
+    "qty": 1.4,
+    "tanggal": "2026-08-29"
+  }
+]

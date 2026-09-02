@@ -1,0 +1,93 @@
+[
+  {
+    "supplier_id": "S01",
+    "nama": "Pasar Induk Kramat Jati",
+    "lead_time_hari": 1,
+    "items": [
+      {
+        "product_id": "P01",
+        "harga": 12500,
+        "min_order": 5
+      },
+      {
+        "product_id": "P02",
+        "harga": 16000,
+        "min_order": 2
+      },
+      {
+        "product_id": "P03",
+        "harga": 30000,
+        "min_order": 5
+      },
+      {
+        "product_id": "P04",
+        "harga": 24000,
+        "min_order": 2
+      },
+      {
+        "product_id": "P06",
+        "harga": 38000,
+        "min_order": 1
+      },
+      {
+        "product_id": "P07",
+        "harga": 35000,
+        "min_order": 1
+      },
+      {
+        "product_id": "P08",
+        "harga": 45000,
+        "min_order": 1
+      }
+    ]
+  },
+  {
+    "supplier_id": "S02",
+    "nama": "Toko Sembako Pak Hadi",
+    "lead_time_hari": 0,
+    "items": [
+      {
+        "product_id": "P01",
+        "harga": 13500,
+        "min_order": 10
+      },
+      {
+        "product_id": "P02",
+        "harga": 17500,
+        "min_order": 2
+      },
+      {
+        "product_id": "P04",
+        "harga": 26000,
+        "min_order": 2
+      },
+      {
+        "product_id": "P05",
+        "harga": 14000,
+        "min_order": 2
+      },
+      {
+        "product_id": "P09",
+        "harga": 10000,
+        "min_order": 6
+      },
+      {
+        "product_id": "P10",
+        "harga": 9000,
+        "min_order": 5
+      }
+    ]
+  },
+  {
+    "supplier_id": "S03",
+    "nama": "Distributor Ayam Sejahtera",
+    "lead_time_hari": 1,
+    "items": [
+      {
+        "product_id": "P03",
+        "harga": 28000,
+        "min_order": 10
+      }
+    ]
+  }
+]

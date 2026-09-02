@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=794, height=1123">
+<style>
+  @page { size: 210mm 297mm; margin: 0; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 794px;
+    height: 1123px;
+    background: #f2f3f3;
+    font-family: 'DejaVu Sans', 'FreeSerif', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen {
+    html { height: auto; display: flex; justify-content: center; background: #e0e0e0; }
+    body { transform-origin: top center; scale: min(1, calc(100vh / 1123)); margin: 0 auto; }
+  }
+
+  .cover {
+    position: relative;
+    width: 794px;
+    height: 1123px;
+    background-color: #f2f3f3;
+    background-image:
+      linear-gradient(rgba(59,82,94,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,82,94,0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .anchor-line {
+    position: absolute;
+    left: 80px;
+    top: 112px;
+    width: 6px;
+    height: 898px;
+    background: #3b525e;
+    border-radius: 3px;
+  }
+
+  .content-zone {
+    position: absolute;
+    left: 150px;
+    top: 0;
+    width: 600px;
+    height: 1123px;
+  }
+
+  .kicker {
+    position: absolute;
+    top: 168px;
+    font-size: 13pt;
+    font-weight: 400;
+    letter-spacing: 3pt;
+    color: #3b525e;
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    position: absolute;
+    top: 300px;
+    font-size: 58pt;
+    font-weight: 900;
+    color: #1f2122;
+    line-height: 1.15;
+    letter-spacing: -1pt;
+  }
+
+  .hero-subtitle {
+    position: absolute;
+    top: 400px;
+    font-size: 13pt;
+    font-weight: 400;
+    color: #378ab3;
+    letter-spacing: 0.5pt;
+    max-width: 560px;
+  }
+
+  .summary {
+    position: absolute;
+    top: 470px;
+    font-size: 10.5pt;
+    font-weight: 400;
+    color: #1f2122;
+    line-height: 1.7;
+    opacity: 0.85;
+    max-width: 540px;
+  }
+
+  .meta {
+    position: absolute;
+    top: 635px;
+    font-size: 9.5pt;
+    color: #787f82;
+    line-height: 1.9;
+  }
+
+  .meta-item { margin-bottom: 1px; }
+
+  .meta-label {
+    font-weight: 700;
+    color: #3b525e;
+    display: inline-block;
+    width: 90px;
+  }
+
+  .accent-block {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    width: 6px;
+    height: 60px;
+    background: #378ab3;
+    border-radius: 3px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 40px;
+    left: 150px;
+    font-size: 8pt;
+    letter-spacing: 2pt;
+    color: #787f82;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="anchor-line"></div>
+  <div class="accent-block"></div>
+
+  <div class="content-zone">
+    <div class="kicker">Proposal Kompetisi AWS Agentic AI</div>
+    <div class="hero-title">PASTI</div>
+    <div class="hero-subtitle">Proactive Agentic Supply-chain Tracking &amp; Inventory</div>
+    <div class="summary">
+      AI agent otonom yang menjadi juru pembelian untuk UMKM F&amp;B Indonesia.
+      Setiap malam, agent membaca stok dan penjualan, memprediksi kebutuhan,
+      membandingkan supplier, menyusun draf Purchase Order, lalu meminta
+      persetujuan owner lewat Telegram.
+    </div>
+    <div class="meta">
+      <div class="meta-item"><span class="meta-label">Track</span>Intelligence Supply Chain</div>
+      <div class="meta-item"><span class="meta-label">Platform</span>AWS Bedrock Agents + Lambda + DynamoDB + Telegram</div>
+      <div class="meta-item"><span class="meta-label">Tim</span>3 orang (AI Engineer, Backend Engineer, Product &amp; Pitch)</div>
+      <div class="meta-item"><span class="meta-label">Versi</span>1.0</div>
+    </div>
+  </div>
+
+  <div class="footer">Demo Day 31 Oktober 2026</div>
+</div>
+</body>
+</html>
