@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -21,9 +21,18 @@ interface ApiKeyEntry {
   createdAt: Date
 }
 
-export function ApiKeyList({ keys: initialKeys }: { keys: ApiKeyEntry[] }) {
+interface ApiKeyListProps {
+  keys: ApiKeyEntry[]
+  onChange?: () => void
+}
+
+export function ApiKeyList({ keys: initialKeys, onChange }: ApiKeyListProps = {}) {
   const [keys, setKeys] = useState(initialKeys)
   const [loadingId, setLoadingId] = useState<string | null>(null)
+
+  useEffect(() => {
+    setKeys(initialKeys)
+  }, [initialKeys])
 
   async function handleToggle(id: string, current: boolean) {
     setLoadingId(id)
@@ -40,6 +49,7 @@ export function ApiKeyList({ keys: initialKeys }: { keys: ApiKeyEntry[] }) {
       }
       setKeys(keys.map((k) => (k.id === id ? { ...k, isActive: !current } : k)))
       toast.success(current ? 'API key dinonaktifkan' : 'API key diaktifkan')
+      if (onChange) onChange()
     } catch (err) {
       toast.error('Network error: ' + String(err))
     } finally {
@@ -59,6 +69,7 @@ export function ApiKeyList({ keys: initialKeys }: { keys: ApiKeyEntry[] }) {
       }
       setKeys(keys.filter((k) => k.id !== id))
       toast.success('API key dihapus')
+      if (onChange) onChange()
     } catch (err) {
       toast.error('Network error: ' + String(err))
     } finally {

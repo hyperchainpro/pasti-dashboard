@@ -1,57 +1,58 @@
-// /profile — User profile page
-// Shows user info, role, account stats, change password form, recent activity
+'use client'
 
-import { auth, signOut } from '@/lib/auth'
-import { db } from '@/lib/db'
+import { useSession, signOut } from 'next-auth/react'
+import { useEffect, useState } from 'react'
 import { redirect } from 'next/navigation'
 import { ProfileCard } from '@/components/profile/profile-card'
 import { ChangePasswordCard } from '@/components/profile/change-password-card'
 import { RecentActivityCard } from '@/components/profile/recent-activity-card'
 import { SignOutButton } from '@/components/profile/sign-out-button'
+import { Loader2 } from 'lucide-react'
 
-export const dynamic = 'force-dynamic'
+interface UserProfile {
+  id: string
+  name: string | null
+  email: string
+  image: string | null
+  role: string
+  emailVerified: Date | null
+  createdAt: Date
+}
 
-export default async function ProfilePage() {
-  const session = await auth()
-  if (!session?.user?.id) {
-    redirect('/login')
+interface ProfileData {
+  user: UserProfile
+  stats: { apiKeyCount: number; agentLogCount: number; lastRun: Date | null }
+  recentLogs: Array<{
+    traceId: string
+    timestamp: string
+    step: string
+    createdAt: Date
+  }>
+}
+
+export default function ProfilePage() {
+  const { status } = useSession()
+  const [data, setData] = useState<ProfileData | null>(null)
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      redirect('/login')
+      return
+    }
+    if (status !== 'authenticated') return
+    fetch('/profile/data')
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
+      .then(setData)
+      .catch((e) => console.error(e))
+  }, [status])
+
+  if (status !== 'authenticated' || !data) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <Loader2 className="h-6 w-6 animate-spin text-emerald-400" />
+      </div>
+    )
   }
-
-  const user = await db.user.findUnique({
-    where: { id: session.user.id },
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      image: true,
-      role: true,
-      emailVerified: true,
-      createdAt: true,
-    },
-  })
-  if (!user) redirect('/login')
-
-  const [apiKeyCount, agentLogCount, lastAgentLog] = await Promise.all([
-    db.apiKey.count({ where: { userId: user.id } }),
-    db.agentLog.count({ where: { userId: user.id } }),
-    db.agentLog.findFirst({
-      where: { userId: user.id },
-      orderBy: { createdAt: 'desc' },
-      select: { traceId: true, timestamp: true, step: true, createdAt: true },
-    }),
-  ])
-
-  const recentLogs = await db.agentLog.findMany({
-    where: { userId: user.id },
-    orderBy: { createdAt: 'desc' },
-    take: 5,
-    select: {
-      traceId: true,
-      timestamp: true,
-      step: true,
-      createdAt: true,
-    },
-  })
 
   return (
     <div className="space-y-6">
@@ -63,22 +64,11 @@ export default async function ProfilePage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <ProfileCard
-          user={{
-            name: user.name || '',
-            email: user.email,
-            role: user.role,
-            image: user.image,
-            createdAt: user.createdAt,
-            emailVerified: user.emailVerified,
-          }}
-          stats={{ apiKeyCount, agentLogCount, lastRun: lastAgentLog?.createdAt || null }}
-        />
-
+        <ProfileCard user={data.user} stats={data.stats} />
         <ChangePasswordCard />
       </div>
 
-      <RecentActivityCard logs={recentLogs} />
+      <RecentActivityCard logs={data.recentLogs} />
 
       <div className="flex justify-end pt-4 border-t border-border">
         <SignOutButton signOutFn={signOut} />

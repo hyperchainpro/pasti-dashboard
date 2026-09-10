@@ -18,7 +18,11 @@ const PROVIDERS = [
   { value: 'custom', label: 'Custom (OpenAI-compatible)', defaultModel: '', helpUrl: '' },
 ]
 
-export function AddApiKeyForm() {
+interface AddApiKeyFormProps {
+  onAdded?: () => void
+}
+
+export function AddApiKeyForm({ onAdded }: AddApiKeyFormProps = {}) {
   const [loading, setLoading] = useState(false)
   const [name, setName] = useState('')
   const [provider, setProvider] = useState('openrouter')
@@ -65,8 +69,8 @@ export function AddApiKeyForm() {
       setKey('')
       setBaseUrl('')
       setModel('')
-      // Refresh page to show new key
-      setTimeout(() => window.location.reload(), 800)
+      if (onAdded) onAdded()
+      else setTimeout(() => window.location.reload(), 800)
     } catch (err) {
       setError('Network error: ' + String(err))
     } finally {

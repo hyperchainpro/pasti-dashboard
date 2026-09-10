@@ -1,53 +1,55 @@
-// /settings — Manage custom LLM API keys
-// User can add OpenRouter / OpenAI / Anthropic / XyphosRouter / custom API keys
-// The agent will use the user's active key instead of the server default
+'use client'
 
-import { auth } from '@/lib/auth'
-import { db } from '@/lib/db'
+import { useSession } from 'next-auth/react'
+import { useEffect, useState } from 'react'
 import { redirect } from 'next/navigation'
 import { ApiKeyList } from '@/components/settings/api-key-list'
 import { AddApiKeyForm } from '@/components/settings/add-api-key-form'
 import { ServerKeyInfo } from '@/components/settings/server-key-info'
+import { Loader2 } from 'lucide-react'
 
-export const dynamic = 'force-dynamic'
+interface ApiKeyEntry {
+  id: string
+  name: string
+  provider: string
+  key: string
+  baseUrl: string | null
+  model: string | null
+  isActive: boolean
+  lastUsedAt: string | null
+  createdAt: string
+}
 
-export default async function SettingsPage() {
-  const session = await auth()
-  if (!session?.user?.id) {
-    redirect('/login')
+interface SettingsData {
+  keys: ApiKeyEntry[]
+  hasServerKey: boolean
+  serverModel: string
+}
+
+export default function SettingsPage() {
+  const { status } = useSession()
+  const [data, setData] = useState<SettingsData | null>(null)
+  const [reloadKey, setReloadKey] = useState(0)
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      redirect('/login')
+      return
+    }
+    if (status !== 'authenticated') return
+    fetch('/settings/data')
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
+      .then(setData)
+      .catch((e) => console.error(e))
+  }, [status, reloadKey])
+
+  if (status !== 'authenticated' || !data) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <Loader2 className="h-6 w-6 animate-spin text-emerald-400" />
+      </div>
+    )
   }
-
-  const [userKeys, userKeyCount] = await Promise.all([
-    db.apiKey.findMany({
-      where: { userId: session.user.id },
-      orderBy: { createdAt: 'desc' },
-      select: {
-        id: true,
-        name: true,
-        provider: true,
-        key: true,
-        baseUrl: true,
-        model: true,
-        isActive: true,
-        lastUsedAt: true,
-        createdAt: true,
-      },
-    }),
-    db.apiKey.count({ where: { userId: session.user.id } }),
-  ])
-
-  // Mask keys for client display
-  const maskedKeys = userKeys.map((k) => {
-    let decrypted = k.key
-    try {
-      decrypted = Buffer.from(k.key, 'base64').toString('utf-8')
-    } catch {}
-    const masked = decrypted.length <= 12 ? '****' : decrypted.slice(0, 6) + '****' + decrypted.slice(-4)
-    return { ...k, key: masked }
-  })
-
-  const hasServerKey = !!process.env.OPENROUTER_API_KEY
-  const serverModel = process.env.OPENROUTER_MODEL || '(not set)'
 
   return (
     <div className="space-y-6">
@@ -58,11 +60,15 @@ export default async function SettingsPage() {
         </p>
       </div>
 
-      <ServerKeyInfo hasServerKey={hasServerKey} serverModel={serverModel} userKeyCount={userKeyCount} />
+      <ServerKeyInfo
+        hasServerKey={data.hasServerKey}
+        serverModel={data.serverModel}
+        userKeyCount={data.keys.length}
+      />
 
       <div className="grid gap-6 md:grid-cols-2">
-        <AddApiKeyForm />
-        <ApiKeyList keys={maskedKeys} />
+        <AddApiKeyForm onAdded={() => setReloadKey((k) => k + 1)} />
+        <ApiKeyList keys={data.keys} onChange={() => setReloadKey((k) => k + 1)} />
       </div>
     </div>
   )
