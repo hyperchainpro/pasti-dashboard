@@ -1,9 +1,12 @@
+// PASTI - Prisma schema (Neon / PostgreSQL)
+// Provider switched from sqlite to postgresql for Neon serverless compatibility.
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -19,23 +22,28 @@ model Product {
   sales       Sale[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@index([kode])
 }
 
 model Sale {
-  id        String   @id @default(cuid())
-  saleId    String   @unique
-  productId String
-  tanggal   String
-  jumlah    Float
+  id          String   @id @default(cuid())
+  saleId      String   @unique
+  productId   String
+  tanggal     String
+  jumlah      Float
   hargaSatuan Int
-  total     Int
-  product   Product  @relation(fields: [productId], references: [productId])
-  createdAt DateTime @default(now())
+  total       Int
+  product     Product  @relation(fields: [productId], references: [productId], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+
+  @@index([productId])
+  @@index([tanggal])
 }
 
 model Supplier {
-  id         String @id @default(cuid())
-  supplierId String @unique
+  id         String   @id @default(cuid())
+  supplierId String   @unique
   nama       String
   kontak     String
   produk     String
@@ -56,20 +64,26 @@ model PurchaseOrder {
   status      String   @default("draft")
   createdAt   String
   updatedAt   DateTime @default(now())
+
+  @@index([supplierId])
+  @@index([status])
 }
 
 model AgentLog {
-  id        String @id @default(cuid())
-  traceId   String @unique
+  id        String   @id @default(cuid())
+  traceId   String   @unique
   timestamp String
   step      String
   detail    String
   createdAt DateTime @default(now())
+
+  @@index([traceId])
+  @@index([createdAt])
 }
 
 model OwnerPreference {
-  id       String @id @default(cuid())
-  prefKey  String @unique
+  id        String   @id @default(cuid())
+  prefKey   String   @unique
   prefValue String
   updatedAt DateTime @updatedAt
 }
