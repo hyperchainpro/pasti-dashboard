@@ -8,11 +8,33 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
 import bcrypt from 'bcryptjs'
 import { db } from './db'
 
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverify'
+
+async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    // Dev mode: accept any non-empty token (real Turnstile not configured)
+    console.warn('[captcha] TURNSTILE_SECRET_KEY not set — accepting token in dev mode')
+    return !!token
+  }
+  const formData = new FormData()
+  formData.append('secret', secret)
+  formData.append('response', token)
+  if (ip) formData.append('remoteip', ip)
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: formData })
+    const data = await res.json()
+    return !!data.success
+  } catch {
+    return false
+  }
+}
+
 const adapter = new PrismaAdapter(db)
 
 export const config = {
   adapter,
-  session: { strategy: 'jwt' }, // JWT for serverless compatibility (no DB session lookup per request)
+  session: { strategy: 'jwt' },
   pages: {
     signIn: '/login',
     signUp: '/register',
@@ -27,11 +49,25 @@ export const config = {
       credentials: {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
+        captchaToken: { label: 'Captcha Token', type: 'text' },
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) return null
         const email = String(credentials.email).toLowerCase().trim()
         const password = String(credentials.password)
+        const captchaToken = String(credentials.captchaToken || '')
+
+        // ── Verify captcha server-side (required) ──
+        const ip =
+          (req as Request | undefined)?.headers?.get?.('x-forwarded-for') ||
+          (req as Request | undefined)?.headers?.get?.('x-real-ip') ||
+          null
+        const captchaOk = await verifyCaptcha(captchaToken, ip)
+        if (!captchaOk) {
+          // Returning null with no specific error — NextAuth treats as auth failure
+          console.warn(`[auth] Login captcha failed for email=${email}`)
+          return null
+        }
 
         const user = await db.user.findUnique({
           where: { email },
@@ -39,6 +75,7 @@ export const config = {
         })
         if (!user || !user.password) return null
 
+        // No email verification required — just password match.
         const valid = await bcrypt.compare(password, user.password)
         if (!valid) return null
 

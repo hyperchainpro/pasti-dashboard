@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -29,29 +30,28 @@ export default function LoginPage() {
     }
     setLoading(true)
     try {
-      const res = await fetch('/api/auth/callback/credentials', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          email,
-          password,
-          captchaToken,
-          redirect: 'false',
-          csrfToken: '',
-          json: 'true',
-        }).toString(),
+      // Use signIn from next-auth/react — handles CSRF + session automatically
+      const result = await signIn('credentials', {
+        email,
+        password,
+        captchaToken,
+        redirect: false,
       })
-      if (res.ok) {
+      if (result?.error) {
+        setError('Email, password, atau captcha salah')
+        setLoading(false)
+        return
+      }
+      if (result?.ok) {
         toast.success('Login berhasil', { description: 'Mengalihkan ke dashboard...' })
         router.push('/')
         router.refresh()
       } else {
-        const data = await res.json().catch(() => ({}))
-        setError(data?.error || 'Email atau password salah')
+        setError('Login gagal. Silakan coba lagi.')
+        setLoading(false)
       }
     } catch (err) {
       setError('Network error: ' + String(err))
-    } finally {
       setLoading(false)
     }
   }
@@ -117,7 +117,7 @@ export default function LoginPage() {
             </div>
           </div>
           <div className="space-y-2">
-            <Label>Verifikasi Keamanan</Label>
+            <Label>Verifikasi Keamanan (wajib)</Label>
             <TurnstileWidget onVerify={setCaptchaToken} />
           </div>
         </CardContent>

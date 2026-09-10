@@ -78,15 +78,6 @@ export function ProfileCard({ user, stats }: ProfileCardProps) {
             })}
           />
           <Row
-            icon={<Shield className="h-4 w-4 text-muted-foreground" />}
-            label="Email terverifikasi"
-            value={
-              user.emailVerified
-                ? new Date(user.emailVerified).toLocaleDateString('id-ID')
-                : 'Belum terverifikasi'
-            }
-          />
-          <Row
             icon={<Key className="h-4 w-4 text-muted-foreground" />}
             label="Custom API Keys"
             value={String(stats.apiKeyCount)}
