@@ -36,16 +36,19 @@ export interface OpenRouterResponse {
   tokensIn?: number
   tokensOut?: number
   model: string
+  usedFallback?: boolean
 }
 
 export interface OpenRouterOptions {
   apiKey?: string
   model?: string
+  baseUrl?: string
   temperature?: number
   maxTokens?: number
   siteUrl?: string
   siteName?: string
   signal?: AbortSignal
+  _retried?: boolean  // internal: prevent infinite retry loop
 }
 
 /**
@@ -57,8 +60,8 @@ export async function chatCompletion(
   tools: OpenRouterTool[] = [],
   opts: OpenRouterOptions = {}
 ): Promise<OpenRouterResponse> {
-  const apiKey = opts.apiKey || process.env.OPENROUTER_API_KEY
-  const model = opts.model || process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free'
+  let apiKey = opts.apiKey || process.env.OPENROUTER_API_KEY
+  let model = opts.model || process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free'
 
   if (!apiKey) {
     throw new Error(
@@ -97,6 +100,61 @@ export async function chatCompletion(
 
   if (!res.ok) {
     const errText = await res.text()
+    // ── Retry for 429 rate limit (1 retry with 1.5s backoff) ──
+    if (res.status === 429 && !opts._retried) {
+      console.warn('[openrouter] Rate limited (429), retrying after 1.5s backoff')
+      await new Promise((r) => setTimeout(r, 1500))
+      return chatCompletion(messages, tools, { ...opts, _retried: true })
+    }
+
+    // ── Fallback for 401/403: if user's custom API key fails authentication,
+    // retry once with server's default OPENROUTER_API_KEY + default model
+    if (
+      (res.status === 401 || res.status === 403) &&
+      opts.apiKey &&  // was using custom key
+      opts.apiKey !== process.env.OPENROUTER_API_KEY &&  // different from server
+      process.env.OPENROUTER_API_KEY  // server key available
+    ) {
+      console.warn(
+        `[openrouter] Custom API key failed (${res.status}), falling back to server key`
+      )
+      const fallbackBody = {
+        ...body,
+        model: process.env.OPENROUTER_MODEL || model,
+      }
+      const fallbackRes = await fetch(OPENROUTER_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          'Content-Type': 'application/json',
+          ...(process.env.OPENROUTER_SITE_URL
+            ? { 'HTTP-Referer': process.env.OPENROUTER_SITE_URL }
+            : {}),
+          ...(process.env.OPENROUTER_SITE_NAME
+            ? { 'X-Title': process.env.OPENROUTER_SITE_NAME }
+            : {}),
+        },
+        body: JSON.stringify(fallbackBody),
+        signal: opts.signal,
+      })
+      if (!fallbackRes.ok) {
+        const fallbackErr = await fallbackRes.text()
+        throw new Error(
+          `OpenRouter fallback also failed (${fallbackRes.status}): ${fallbackErr}`
+        )
+      }
+      const fallbackData = await fallbackRes.json()
+      const fallbackChoice = fallbackData.choices?.[0]?.message ?? {}
+      return {
+        text: fallbackChoice.content ?? '',
+        toolCalls: fallbackChoice.tool_calls,
+        raw: fallbackData,
+        tokensIn: fallbackData.usage?.prompt_tokens,
+        tokensOut: fallbackData.usage?.completion_tokens,
+        model: fallbackData.model || process.env.OPENROUTER_MODEL || model,
+        usedFallback: true,
+      }
+    }
     throw new Error(`OpenRouter ${res.status}: ${errText}`)
   }
 
