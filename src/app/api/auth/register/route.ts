@@ -8,6 +8,28 @@ import { db } from '@/lib/db'
 
 export const runtime = 'nodejs'
 
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverify'
+
+async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    // Dev mode: accept any non-empty token
+    console.warn('[captcha] TURNSTILE_SECRET_KEY not set — accepting token in dev mode')
+    return true
+  }
+  const formData = new FormData()
+  formData.append('secret', secret)
+  formData.append('response', token)
+  if (ip) formData.append('remoteip', ip)
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: formData })
+    const data = await res.json()
+    return !!data.success
+  } catch {
+    return false
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const { name, email, password, captchaToken } = await req.json()
@@ -26,15 +48,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Captcha wajib diisi' }, { status: 400 })
     }
 
-    // ── Verify captcha ──
-    const origin = req.headers.get('origin') || 'http://localhost:3000'
-    const captchaRes = await fetch(`${origin}/api/auth/verify-captcha`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: captchaToken }),
-    })
-    const captchaData = await captchaRes.json()
-    if (!captchaData.success) {
+    // ── Verify captcha directly (no internal fetch) ──
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    const captchaOk = await verifyCaptcha(captchaToken, ip)
+    if (!captchaOk) {
       return NextResponse.json(
         { error: 'Verifikasi captcha gagal. Silakan coba lagi.' },
         { status: 400 }

@@ -1,12 +1,32 @@
 // POST /api/auth/reset-password
 // Body: { token, newPassword, captchaToken }
-// Validates token (not expired, not used) → updates user password → marks token used
 
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { db } from '@/lib/db'
 
 export const runtime = 'nodejs'
+
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverify'
+
+async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    console.warn('[captcha] TURNSTILE_SECRET_KEY not set — accepting token in dev mode')
+    return true
+  }
+  const formData = new FormData()
+  formData.append('secret', secret)
+  formData.append('response', token)
+  if (ip) formData.append('remoteip', ip)
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: formData })
+    const data = await res.json()
+    return !!data.success
+  } catch {
+    return false
+  }
+}
 
 export async function POST(req: Request) {
   try {
@@ -21,15 +41,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Password minimal 8 karakter' }, { status: 400 })
     }
 
-    // Verify captcha
-    const origin = req.headers.get('origin') || 'http://localhost:3000'
-    const captchaRes = await fetch(`${origin}/api/auth/verify-captcha`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: captchaToken }),
-    })
-    const captchaData = await captchaRes.json()
-    if (!captchaData.success) {
+    // Verify captcha directly
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    const captchaOk = await verifyCaptcha(captchaToken, ip)
+    if (!captchaOk) {
       return NextResponse.json({ error: 'Verifikasi captcha gagal' }, { status: 400 })
     }
 

@@ -10,6 +10,27 @@ import nodemailer from 'nodemailer'
 export const runtime = 'nodejs'
 export const maxDuration = 30
 
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverify'
+
+async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    console.warn('[captcha] TURNSTILE_SECRET_KEY not set — accepting token in dev mode')
+    return true
+  }
+  const formData = new FormData()
+  formData.append('secret', secret)
+  formData.append('response', token)
+  if (ip) formData.append('remoteip', ip)
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: formData })
+    const data = await res.json()
+    return !!data.success
+  } catch {
+    return false
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const { email, captchaToken } = await req.json()
@@ -18,15 +39,10 @@ export async function POST(req: Request) {
     }
     const normalizedEmail = email.toLowerCase().trim()
 
-    // Verify captcha
-    const origin = req.headers.get('origin') || 'http://localhost:3000'
-    const captchaRes = await fetch(`${origin}/api/auth/verify-captcha`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: captchaToken }),
-    })
-    const captchaData = await captchaRes.json()
-    if (!captchaData.success) {
+    // Verify captcha directly
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    const captchaOk = await verifyCaptcha(captchaToken, ip)
+    if (!captchaOk) {
       return NextResponse.json({ error: 'Verifikasi captcha gagal' }, { status: 400 })
     }
 
@@ -42,24 +58,19 @@ export async function POST(req: Request) {
       return NextResponse.json(genericResponse)
     }
 
-    // Generate secure token (32 bytes = 64 hex chars)
-    const token = await crypto.getRandomValues(new Uint8Array(32)).then((bytes) =>
-      Array.from(bytes).map((b) => b.toString(16).padStart(2, '0')).join('')
-    )
+    // Generate secure token
+    const randomBytes = new Uint8Array(32)
+    crypto.getRandomValues(randomBytes)
+    const token = Array.from(randomBytes).map((b) => b.toString(16).padStart(2, '0')).join('')
     const expiresAt = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
     await db.passwordReset.create({
-      data: {
-        userId: user.id,
-        token,
-        expiresAt,
-      },
+      data: { userId: user.id, token, expiresAt },
     })
 
-    const appUrl = process.env.NEXTAUTH_URL || origin
+    const appUrl = process.env.NEXTAUTH_URL || `https://${req.headers.get('host')}`
     const resetUrl = `${appUrl}/reset-password?token=${token}`
 
-    // ── Try to send email via SMTP if configured ──
     const smtpHost = process.env.SMTP_HOST
     const smtpUser = process.env.SMTP_USER
     const smtpPass = process.env.SMTP_PASS
@@ -72,7 +83,6 @@ export async function POST(req: Request) {
         secure: process.env.SMTP_SECURE === 'true',
         auth: { user: smtpUser, pass: smtpPass },
       })
-
       await transporter.sendMail({
         from: smtpFrom,
         to: user.email,
@@ -98,7 +108,6 @@ export async function POST(req: Request) {
         `,
       })
     } else {
-      // Dev mode: log the reset URL
       console.log(`\n[DEV] Password reset link for ${user.email}:\n  ${resetUrl}\n`)
     }
 
