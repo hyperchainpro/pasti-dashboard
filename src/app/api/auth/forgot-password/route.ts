@@ -6,6 +6,7 @@
 import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import nodemailer from 'nodemailer'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
@@ -33,14 +34,34 @@ async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean
 
 export async function POST(req: Request) {
   try {
+    // ── Rate limit: 3 forgot-password requests per hour per IP ──
+    const ip = getClientIp(req)
+    const rl = checkRateLimit('auth:forgot-password', ip)
+    if (!rl.success) {
+      return NextResponse.json(
+        {
+          error: `Terlalu banyak permintaan reset password. Coba lagi dalam ${Math.ceil(
+            rl.retryAfterSec / 60
+          )} menit.`,
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(rl.retryAfterSec),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rl.resetAt),
+          },
+        }
+      )
+    }
+
     const { email, captchaToken } = await req.json()
     if (!email || !captchaToken) {
       return NextResponse.json({ error: 'Email dan captcha wajib diisi' }, { status: 400 })
     }
     const normalizedEmail = email.toLowerCase().trim()
 
-    // Verify captcha directly
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    // Verify captcha directly (re-use ip from rate limit check)
     const captchaOk = await verifyCaptcha(captchaToken, ip)
     if (!captchaOk) {
       return NextResponse.json({ error: 'Verifikasi captcha gagal' }, { status: 400 })

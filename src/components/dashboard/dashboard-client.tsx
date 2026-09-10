@@ -30,6 +30,7 @@ import {
   LogOut,
   ChevronDown,
   Loader2,
+  Shield,
 } from 'lucide-react'
 import { OverviewTab } from '@/components/dashboard/overview-tab'
 import { InventoryTab } from '@/components/dashboard/inventory-tab'
@@ -189,6 +190,14 @@ export function DashboardClient() {
                       Settings & API Keys
                     </Link>
                   </DropdownMenuItem>
+                  {user?.role === 'admin' && (
+                    <DropdownMenuItem asChild>
+                      <Link href="/admin" className="cursor-pointer">
+                        <Shield className="h-4 w-4 mr-2" />
+                        Admin Dashboard
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut} className="text-red-400 cursor-pointer">
                     <LogOut className="h-4 w-4 mr-2" />

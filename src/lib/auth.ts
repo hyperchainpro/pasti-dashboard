@@ -7,6 +7,11 @@ import Credentials from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import bcrypt from 'bcryptjs'
 import { db } from './db'
+import {
+  checkAccountLockout,
+  recordFailedAttempt,
+  clearFailedAttempts,
+} from './rate-limit'
 
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverify'
 
@@ -57,27 +62,48 @@ export const config = {
         const password = String(credentials.password)
         const captchaToken = String(credentials.captchaToken || '')
 
-        // ── Verify captcha server-side (required) ──
+        // ── 1. Verify captcha server-side (required) ──
         const ip =
           (req as Request | undefined)?.headers?.get?.('x-forwarded-for') ||
           (req as Request | undefined)?.headers?.get?.('x-real-ip') ||
           null
         const captchaOk = await verifyCaptcha(captchaToken, ip)
         if (!captchaOk) {
-          // Returning null with no specific error — NextAuth treats as auth failure
           console.warn(`[auth] Login captcha failed for email=${email}`)
           return null
         }
 
+        // ── 2. Check account lockout (5 failed attempts → 15 min lock) ──
+        const lockout = await checkAccountLockout(email)
+        if (lockout.locked) {
+          console.warn(`[auth] Account locked for email=${email}, unlock at ${lockout.unlockAt}`)
+          return null
+        }
+
+        // ── 3. Find user ──
         const user = await db.user.findUnique({
           where: { email },
           select: { id: true, name: true, email: true, password: true, role: true, image: true },
         })
-        if (!user || !user.password) return null
+        if (!user || !user.password) {
+          // Don't reveal whether email exists — record failed attempt anyway to slow enumeration
+          await recordFailedAttempt(email)
+          return null
+        }
 
-        // No email verification required — just password match.
+        // ── 4. Verify password (no email verification required) ──
         const valid = await bcrypt.compare(password, user.password)
-        if (!valid) return null
+        if (!valid) {
+          const result = await recordFailedAttempt(email)
+          console.warn(
+            `[auth] Failed login attempt for ${email}: ${result.remaining} remaining` +
+              (result.locked ? ` — account LOCKED until ${result.unlockAt}` : '')
+          )
+          return null
+        }
+
+        // ── 5. Successful login — clear failed attempts ──
+        await clearFailedAttempts(email)
 
         return {
           id: user.id,

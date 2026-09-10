@@ -4,6 +4,7 @@
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { db } from '@/lib/db'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 
@@ -30,6 +31,25 @@ async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean
 
 export async function POST(req: Request) {
   try {
+    // ── Rate limit: 5 reset-password attempts per hour per IP ──
+    const ip = getClientIp(req)
+    const rl = checkRateLimit('auth:reset-password', ip)
+    if (!rl.success) {
+      return NextResponse.json(
+        {
+          error: `Terlalu banyak percobaan reset password. Coba lagi dalam ${Math.ceil(
+            rl.retryAfterSec / 60
+          )} menit.`,
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(rl.retryAfterSec),
+          },
+        }
+      )
+    }
+
     const { token, newPassword, captchaToken } = await req.json()
     if (!token || !newPassword || !captchaToken) {
       return NextResponse.json(
@@ -41,8 +61,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Password minimal 8 karakter' }, { status: 400 })
     }
 
-    // Verify captcha directly
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    // Verify captcha directly (re-use ip from rate limit check)
     const captchaOk = await verifyCaptcha(captchaToken, ip)
     if (!captchaOk) {
       return NextResponse.json({ error: 'Verifikasi captcha gagal' }, { status: 400 })

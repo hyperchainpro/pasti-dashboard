@@ -5,6 +5,7 @@
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { db } from '@/lib/db'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 
@@ -13,7 +14,6 @@ const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/api/v3/siteverif
 async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY
   if (!secret) {
-    // Dev mode: accept any non-empty token
     console.warn('[captcha] TURNSTILE_SECRET_KEY not set — accepting token in dev mode')
     return true
   }
@@ -32,6 +32,27 @@ async function verifyCaptcha(token: string, ip?: string | null): Promise<boolean
 
 export async function POST(req: Request) {
   try {
+    // ── Rate limit: 3 registrations per hour per IP ──
+    const ip = getClientIp(req)
+    const rl = checkRateLimit('auth:register', ip)
+    if (!rl.success) {
+      return NextResponse.json(
+        {
+          error: `Terlalu banyak percobaan registrasi. Coba lagi dalam ${Math.ceil(
+            rl.retryAfterSec / 60
+          )} menit.`,
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(rl.retryAfterSec),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rl.resetAt),
+          },
+        }
+      )
+    }
+
     const { name, email, password, captchaToken } = await req.json()
 
     // ── Validate inputs ──
@@ -48,8 +69,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Captcha wajib diisi' }, { status: 400 })
     }
 
-    // ── Verify captcha directly (no internal fetch) ──
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
+    // Verify captcha directly (re-use ip from rate limit check)
     const captchaOk = await verifyCaptcha(captchaToken, ip)
     if (!captchaOk) {
       return NextResponse.json(
