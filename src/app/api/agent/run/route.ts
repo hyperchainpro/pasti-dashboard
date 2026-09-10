@@ -3,7 +3,7 @@ import { runAgent } from '@/lib/agent-runner'
 import { db } from '@/lib/db'
 
 export const runtime = 'nodejs'
-export const maxDuration = 60 // Vercel serverless function timeout
+export const maxDuration = 60 // Vercel Pro: 60s, Hobby: 10s (auto-clamped)
 
 export async function POST(req: Request) {
   const hasOpenRouter = !!process.env.OPENROUTER_API_KEY

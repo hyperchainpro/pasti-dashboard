@@ -96,7 +96,7 @@ export async function runAgent(opts: {
     },
   ]
 
-  const MAX_ITERATIONS = 10
+  const MAX_ITERATIONS = 6  // Vercel Hobby: 10s timeout; each iteration ~2-3s
   let iteration = 0
   let tokensIn = 0
   let tokensOut = 0
@@ -112,7 +112,7 @@ export async function runAgent(opts: {
         apiKey: opts.apiKey,
         model: opts.model,
         temperature: 0.4,
-        maxTokens: 1500,
+        maxTokens: 800,  // Vercel Hobby: smaller = faster
         signal: opts.signal,
       })
     } catch (err) {
