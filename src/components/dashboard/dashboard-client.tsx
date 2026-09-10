@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useSession, signOut } from 'next-auth/react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -28,6 +29,7 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  Loader2,
 } from 'lucide-react'
 import { OverviewTab } from '@/components/dashboard/overview-tab'
 import { InventoryTab } from '@/components/dashboard/inventory-tab'
@@ -46,18 +48,9 @@ const tabs = [
   { value: 'agent', label: 'Agent Log', icon: Bot },
 ]
 
-interface DashboardClientProps {
-  user: {
-    name: string
-    email: string
-    image: string | null
-    role: string
-  }
-  signOutFn: () => Promise<void>
-}
-
-export function DashboardClient({ user, signOutFn }: DashboardClientProps) {
+export function DashboardClient() {
   const router = useRouter()
+  const { data: session, status } = useSession()
   const [activeTab, setActiveTab] = useState('overview')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [seeding, setSeeding] = useState(false)
@@ -78,17 +71,29 @@ export function DashboardClient({ user, signOutFn }: DashboardClientProps) {
   }
 
   const handleSignOut = async () => {
-    try {
-      await signOutFn()
-      toast.success('Berhasil keluar')
-      router.push('/login')
-      router.refresh()
-    } catch (err) {
-      toast.error('Gagal keluar', { description: String(err) })
-    }
+    await signOut({ callbackUrl: '/login' })
+    toast.success('Berhasil keluar')
   }
 
-  const initials = user.name
+  // Loading state while session is being fetched
+  if (status === 'loading') {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="h-6 w-6 animate-spin text-emerald-400" />
+      </div>
+    )
+  }
+
+  // If unauthenticated, redirect to login (middleware also handles this, but for safety)
+  if (status === 'unauthenticated') {
+    if (typeof window !== 'undefined') router.push('/login')
+    return null
+  }
+
+  // session might still be loading
+  const user = session?.user
+  const displayName = user?.name || user?.email || 'User'
+  const initials = displayName
     .split(' ')
     .map((s) => s[0])
     .slice(0, 2)
@@ -147,18 +152,17 @@ export function DashboardClient({ user, signOutFn }: DashboardClientProps) {
                 <RefreshCw className={seeding ? 'h-3.5 w-3.5 animate-spin' : 'h-3.5 w-3.5'} />
               </Button>
 
-              {/* User dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-2 p-1 pr-2 rounded-md hover:bg-muted/50 transition-colors">
                     <Avatar className="h-7 w-7 border border-emerald-500/30">
-                      <AvatarImage src={user.image || undefined} />
+                      <AvatarImage src={user?.image || undefined} />
                       <AvatarFallback className="bg-emerald-500/20 text-emerald-400 text-xs font-semibold">
                         {initials}
                       </AvatarFallback>
                     </Avatar>
                     <span className="hidden sm:inline text-xs text-muted-foreground max-w-[120px] truncate">
-                      {user.name}
+                      {displayName}
                     </span>
                     <ChevronDown className="h-3 w-3 text-muted-foreground" />
                   </button>
@@ -166,8 +170,10 @@ export function DashboardClient({ user, signOutFn }: DashboardClientProps) {
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">{user.name}</p>
-                      <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+                      <p className="text-sm font-medium leading-none">{displayName}</p>
+                      {user?.email && (
+                        <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+                      )}
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
