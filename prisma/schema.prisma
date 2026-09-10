@@ -1,5 +1,4 @@
-// PASTI - Prisma schema (Neon / PostgreSQL)
-// Provider switched from sqlite to postgresql for Neon serverless compatibility.
+// PASTI - Prisma schema (Neon / PostgreSQL) with auth + custom API keys
 
 generator client {
   provider = "prisma-client-js"
@@ -9,6 +8,102 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// ── Auth models (NextAuth.js compatible) ───────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String? // For credentials provider (bcrypt hashed)
+  role          String    @default("user") // user | admin
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  apiKeys       ApiKey[]
+  agentLogs     AgentLog[]
+  passwordResets PasswordReset[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+}
+
+// ── Custom LLM API keys (per-user) ─────────────────────────────
+
+model ApiKey {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String // friendly label e.g. "OpenRouter Personal"
+  provider  String // openrouter | openai | anthropic | xyphosrouter | custom
+  key       String // encrypted at app layer; stored as base64
+  baseUrl   String? // custom base URL override
+  model     String? // preferred model id
+  isActive  Boolean  @default(true)
+  lastUsedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([provider])
+}
+
+// ── Application models ─────────────────────────────────────────
 
 model Product {
   productId   String  @id @default(cuid())
@@ -72,13 +167,17 @@ model PurchaseOrder {
 model AgentLog {
   id        String   @id @default(cuid())
   traceId   String   @unique
+  userId    String?  // nullable for backward compat with seed data
   timestamp String
   step      String
   detail    String
   createdAt DateTime @default(now())
 
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
   @@index([traceId])
   @@index([createdAt])
+  @@index([userId])
 }
 
 model OwnerPreference {
